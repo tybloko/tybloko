@@ -1,0 +1,40 @@
+import turtle
+penColor = ' '
+lineLenght = 0
+angle = 0
+
+penColor = input ("What's a pen color you want it to be? (red, green, blue, black)\n").lower()
+if penColor != "red" and penColor !="green" and penColor != "blue" and penColor != "black" :
+    while penColor != "red" and "green" and "blue" and "black" :
+        penColor = input ("You'd better check the color you chose. Only red, green, blue or black available, sorry.\n What's a pen color you want it to be? (red, green, blue, black)\n").lower()
+    else:
+        lineLenght = int(input ("what's a line lenght you want it to be?\n"))
+        angle = int(input ("what's an angle you want it to be?\n"))
+        if angle < 0:
+            while  angle < 0:
+                angle = int(input ("Oh, no, only 0-360 angles here! \nWhat's an angle you want it to be?\n")) 
+            else:
+                while lineLenght !=0:
+                    turtle.color(penColor)
+                    turtle.forward(lineLenght)
+                    turtle.right(360/angle)
+                    lineLenght = int(input ("What's a line lenght you want it to be? (Write '0' when you want it to stop)\n"))
+                    if lineLenght !=0:
+                        penColor = input ("What's a pen color you want it to be? (red, green, blue, black)\n").lower()
+                        angle = int(input ("What's an angle you want it to be?\n"))
+elif penColor == "red" or penColor =="green" or penColor == "blue" or penColor == "black" :
+    lineLenght = int(input ("what's a line lenght you want it to be?\n"))
+    angle = int(input ("what's an angle you want it to be?\n"))
+    if angle < 0:
+        while  angle < 0:
+            angle = int(input ("Oh, no, only 0-360 angles here! \nWhat's an angle you want it to be?\n")) 
+            while lineLenght !=0:
+                turtle.color(penColor)
+                turtle.forward(lineLenght)
+                turtle.right(360/angle)
+                lineLenght = int(input ("What's a line lenght you want it to be? (Write '0' when you want it to stop)\n"))
+                if lineLenght !=0:
+                    penColor = input ("What's a pen color you want it to be? (red, green, blue, black)\n").lower()
+                    angle = int(input ("What's an angle you want it to be?\n"))
+print ("That's all, folks!")
+
